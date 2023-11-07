@@ -69,8 +69,8 @@ public class TitleScene extends PixelScene {
 		title.x = (w - title.width()) / 2;
 		title.y = (h - height) / 2;
 		
-		placeTorch( title.x + 18, title.y + 20 );
-		placeTorch( title.x + title.width - 18, title.y + 20 );
+		placeTorch( title.x + 25, title.y + 50 );
+		placeTorch( title.x + title.width - 25, title.y + 50 );
 		
 		Image signs = new Image( BannerSprites.get( BannerSprites.Type.PIXEL_DUNGEON_SIGNS ) ) {
 			private float time = 0;
@@ -87,7 +87,7 @@ public class TitleScene extends PixelScene {
 			}
 		};
 		signs.x = title.x;
-		signs.y = title.y;
+		signs.y = title.y+10;
 		add( signs );
 		
 		DashboardItem btnBadges = new DashboardItem( TXT_BADGES, 3 ) {
