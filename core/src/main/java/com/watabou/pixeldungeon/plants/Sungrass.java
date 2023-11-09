@@ -86,10 +86,10 @@ public class Sungrass extends Plant {
 		
 		@Override
 		public boolean act() {
-			if (target.pos != pos || target.HP >= target.HT) {
+			if (target.pos != pos || target.HEALTH_POINTS >= target.HEALTH_BAR) {
 				detach();
 			} else {
-				target.HP = Math.min( target.HT, target.HP + target.HT / 10 );
+				target.HEALTH_POINTS = Math.min( target.HEALTH_BAR, target.HEALTH_POINTS + target.HEALTH_BAR / 10 );
 				target.sprite.emitter().burst( Speck.factory( Speck.HEALING ), 1 );
 			}
 			spend( STEP );

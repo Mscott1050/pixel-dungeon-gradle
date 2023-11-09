@@ -38,7 +38,8 @@ import com.watabou.utils.Graph;
 import com.watabou.utils.Random;
 import com.watabou.utils.Rect;
 
-public abstract class RegularLevel extends Level {
+public abstract class
+RegularLevel extends Level {
 
 	protected HashSet<Room> rooms;
 	

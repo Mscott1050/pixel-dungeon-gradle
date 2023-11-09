@@ -40,7 +40,7 @@ public class Bestiary {
 		
 		if (Random.Int( 30 ) == 0) {
 			if (cl == Rat.class) {
-				cl = Albino.class;
+				cl = Rat_Albino.class;
 			} else if (cl == Thief.class) {
 				cl = Bandit.class;
 			} else if (cl == Brute.class) {

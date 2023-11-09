@@ -194,7 +194,7 @@ public class StatusPane extends Component {
 			layoutTags();
 		}
 		
-		float health = (float)Dungeon.hero.HP / Dungeon.hero.HT;
+		float health = (float)Dungeon.hero.HEALTH_POINTS / Dungeon.hero.HEALTH_BAR;
 		
 		if (health == 0) {
 			avatar.tint( 0x000000, 0.6f );

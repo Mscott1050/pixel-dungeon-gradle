@@ -60,7 +60,7 @@ public class Yog extends Mob {
 		name = Dungeon.depth == Statistics.deepestFloor ? "Yog-Dzewa" : "echo of Yog-Dzewa";
 		spriteClass = YogSprite.class;
 		
-		HP = HT = 300;
+		HEALTH_POINTS = HEALTH_BAR = 300;
 		
 		EXP = 50;
 		
@@ -190,7 +190,7 @@ public class Yog extends Mob {
 			name = "rotting fist";
 			spriteClass = RottingFistSprite.class;
 			
-			HP = HT = 300;
+			HEALTH_POINTS = HEALTH_BAR = 300;
 			defenseSkill = 25;
 			
 			EXP = 0;
@@ -237,9 +237,9 @@ public class Yog extends Mob {
 		@Override
 		public boolean act() {
 			
-			if (Level.water[pos] && HP < HT) {
+			if (Level.water[pos] && HEALTH_POINTS < HEALTH_BAR) {
 				sprite.emitter().burst( ShadowParticle.UP, 2 );
-				HP += REGENERATION;
+				HEALTH_POINTS += REGENERATION;
 			}
 			
 			return super.act();
@@ -284,7 +284,7 @@ public class Yog extends Mob {
 			name = "burning fist";
 			spriteClass = BurningFistSprite.class;
 			
-			HP = HT = 200;
+			HEALTH_POINTS = HEALTH_BAR = 200;
 			defenseSkill = 25;
 			
 			EXP = 0;
@@ -400,7 +400,7 @@ public class Yog extends Mob {
 			name = "god's larva";
 			spriteClass = LarvaSprite.class;
 			
-			HP = HT = 25;
+			HEALTH_POINTS = HEALTH_BAR = 25;
 			defenseSkill = 20;
 			
 			EXP = 0;

@@ -25,7 +25,7 @@ public class Fury extends Buff {
 	
 	@Override
 	public boolean act() {
-		if (target.HP > target.HT * LEVEL) {
+		if (target.HEALTH_POINTS > target.HEALTH_BAR * LEVEL) {
 			detach();
 		}
 		

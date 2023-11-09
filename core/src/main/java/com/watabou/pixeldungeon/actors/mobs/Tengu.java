@@ -52,7 +52,7 @@ public class Tengu extends Mob {
 		name = Dungeon.depth == Statistics.deepestFloor ? "Tengu" : "memory of Tengu";
 		spriteClass = TenguSprite.class;
 		
-		HP = HT = 120;
+		HEALTH_POINTS = HEALTH_BAR = 120;
 		EXP = 20;
 		defenseSkill = 20;
 	}

@@ -189,7 +189,7 @@ public class WndRanking extends WndTabbed {
 			pos += GAP + GAP;
 			
 			pos = statSlot( this, TXT_STR, Integer.toString( Dungeon.hero.STR ), pos );
-			pos = statSlot( this, TXT_HEALTH, Integer.toString( Dungeon.hero.HT ), pos );
+			pos = statSlot( this, TXT_HEALTH, Integer.toString( Dungeon.hero.HEALTH_BAR), pos );
 			
 			pos += GAP;
 			

@@ -28,7 +28,7 @@ import java.util.List;
 
 import com.watabou.noosa.Game;
 import com.watabou.pixeldungeon.actors.mobs.Acidic;
-import com.watabou.pixeldungeon.actors.mobs.Albino;
+import com.watabou.pixeldungeon.actors.mobs.Rat_Albino;
 import com.watabou.pixeldungeon.actors.mobs.Bandit;
 import com.watabou.pixeldungeon.actors.mobs.Mob;
 import com.watabou.pixeldungeon.actors.mobs.Senior;
@@ -732,7 +732,7 @@ public class Badges {
 	public static void validateRare( Mob mob ) {
 		
 		Badge badge = null;
-		if (mob instanceof Albino) {
+		if (mob instanceof Rat_Albino) {
 			badge = Badge.RARE_ALBINO;
 		} else if (mob instanceof Bandit) {
 			badge = Badge.RARE_BANDIT;

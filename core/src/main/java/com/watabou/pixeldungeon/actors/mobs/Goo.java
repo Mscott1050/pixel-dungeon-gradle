@@ -48,7 +48,7 @@ public class Goo extends Mob {
 	{
 		name = Dungeon.depth == Statistics.deepestFloor ? "Goo" : "spawn of Goo";
 		
-		HP = HT = 80;
+		HEALTH_POINTS = HEALTH_BAR = 80;
 		EXP = 10;
 		defenseSkill = 12;
 		spriteClass = GooSprite.class;
@@ -82,9 +82,9 @@ public class Goo extends Mob {
 	@Override
 	public boolean act() {
 		
-		if (Level.water[pos] && HP < HT) {
+		if (Level.water[pos] && HEALTH_POINTS < HEALTH_BAR) {
 			sprite.emitter().burst( Speck.factory( Speck.HEALING ), 1 );
-			HP++;
+			HEALTH_POINTS++;
 		}
 		
 		return super.act();

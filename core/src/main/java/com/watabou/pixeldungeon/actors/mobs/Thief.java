@@ -42,7 +42,7 @@ public class Thief extends Mob {
 		name = "crazy thief";
 		spriteClass = ThiefSprite.class;
 		
-		HP = HT = 20;
+		HEALTH_POINTS = HEALTH_BAR = 20;
 		defenseSkill = 12;
 		
 		EXP = 5;

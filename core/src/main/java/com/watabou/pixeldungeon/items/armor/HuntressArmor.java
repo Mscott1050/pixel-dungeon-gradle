@@ -81,7 +81,7 @@ public class HuntressArmor extends ClassArmor {
 			return;
 		}
 		
-		curUser.HP -= (curUser.HP / 3);
+		curUser.HEALTH_POINTS -= (curUser.HEALTH_POINTS / 3);
 		
 		curUser.sprite.zap( curUser.pos );
 		curUser.busy();

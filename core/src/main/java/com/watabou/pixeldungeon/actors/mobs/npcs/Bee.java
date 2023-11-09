@@ -62,7 +62,7 @@ public class Bee extends NPC {
 	public void spawn( int level ) {
 		this.level = level;
 		
-		HT = (3 + level) * 5;
+		HEALTH_BAR = (3 + level) * 5;
 		defenseSkill = 9 + level;
 	}
 	
@@ -73,7 +73,7 @@ public class Bee extends NPC {
 	
 	@Override
 	public int damageRoll() {
-		return Random.NormalIntRange( HT / 10, HT / 4 );
+		return Random.NormalIntRange( HEALTH_BAR / 10, HEALTH_BAR / 4 );
 	}
 	
 	@Override
@@ -86,8 +86,8 @@ public class Bee extends NPC {
 	
 	@Override
 	protected boolean act() {
-		HP--;
-		if (HP <= 0) {
+		HEALTH_POINTS--;
+		if (HEALTH_POINTS <= 0) {
 			die( null );
 			return true;
 		} else {

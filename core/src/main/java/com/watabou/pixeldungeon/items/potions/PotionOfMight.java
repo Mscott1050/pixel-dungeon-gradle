@@ -33,8 +33,8 @@ public class PotionOfMight extends PotionOfStrength {
 		setKnown();
 		
 		hero.STR++;
-		hero.HT += 5;
-		hero.HP += 5;
+		hero.HEALTH_BAR += 5;
+		hero.HEALTH_POINTS += 5;
 		hero.sprite.showStatus( CharSprite.POSITIVE, "+1 str, +5 ht" );
 		GLog.p( "Newfound strength surges through your body." );
 		

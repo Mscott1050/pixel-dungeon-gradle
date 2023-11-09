@@ -64,7 +64,7 @@ public class HighGrass {
 		
 		// Warlock's barkskin
 		if (ch instanceof Hero && ((Hero)ch).subClass == HeroSubClass.WARDEN) {
-			Buff.affect( ch, Barkskin.class ).level( ch.HT / 3 );
+			Buff.affect( ch, Barkskin.class ).level( ch.HEALTH_BAR / 3 );
 			leaves = 8;
 		}
 		

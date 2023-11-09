@@ -24,13 +24,13 @@ import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.sprites.AlbinoSprite;
 import com.watabou.utils.Random;
 
-public class Albino extends Rat {
+public class Rat_Albino extends Rat {
 
 	{
 		name = "albino rat";
 		spriteClass = AlbinoSprite.class;
 		
-		HP = HT = 15;
+		HEALTH_POINTS = HEALTH_BAR = 15;
 	}
 	
 	@Override

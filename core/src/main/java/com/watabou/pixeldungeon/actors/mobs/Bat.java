@@ -32,7 +32,7 @@ public class Bat extends Mob {
 		name = "vampire bat";
 		spriteClass = BatSprite.class;
 		
-		HP = HT = 30;
+		HEALTH_POINTS = HEALTH_BAR = 30;
 		defenseSkill = 15;
 		baseSpeed = 2f;
 		
@@ -68,10 +68,10 @@ public class Bat extends Mob {
 	@Override
 	public int attackProc( Char enemy, int damage ) {
 		
-		int reg = Math.min( damage, HT - HP );
+		int reg = Math.min( damage, HEALTH_BAR - HEALTH_POINTS);
 		
 		if (reg > 0) {
-			HP += reg;
+			HEALTH_POINTS += reg;
 			sprite.emitter().burst( Speck.factory( Speck.HEALING ), 1 );
 		}
 		

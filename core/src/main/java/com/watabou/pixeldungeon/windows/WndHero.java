@@ -73,13 +73,13 @@ public class WndHero extends WndTabbed {
 			protected void select( boolean value ) {
 				super.select( value );
 				stats.visible = stats.active = selected;
-			};
+			}
 		} );
 		add( new LabeledTab( TXT_BUFFS ) {
 			protected void select( boolean value ) {
 				super.select( value );
 				buffs.visible = buffs.active = selected;
-			};
+			}
 		} );
 		for (Tab tab : tabs) {
 			tab.setSize( TAB_WIDTH, tabHeight() );
@@ -135,7 +135,7 @@ public class WndHero extends WndTabbed {
 			pos = btnCatalogus.bottom() + GAP;
 			
 			statSlot( TXT_STR, hero.STR() );
-			statSlot( TXT_HEALTH, hero.HP + "/" + hero.HT );
+			statSlot( TXT_HEALTH, hero.HEALTH_POINTS + "/" + hero.HEALTH_BAR);
 			statSlot( TXT_EXP, hero.exp + "/" + hero.maxExp() );
 
 			pos += GAP;

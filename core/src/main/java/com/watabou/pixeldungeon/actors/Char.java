@@ -76,9 +76,10 @@ public abstract class Char extends Actor {
 	public CharSprite sprite;
 	
 	public String name = "mob";
-	
-	public int HT;
-	public int HP;
+	//HT = Health Total (Tank Size)
+	public int HEALTH_BAR;
+	//HP = Hit Points. (Resource)
+	public int HEALTH_POINTS;
 	
 	protected float baseSpeed	= 1;
 	
@@ -99,7 +100,7 @@ public abstract class Char extends Actor {
 	
 	private static final String POS			= "pos";
 	private static final String TAG_HP		= "HP";
-	private static final String TAG_HT		= "HT";
+	private static final String TAG_HB = "HB";
 	private static final String BUFFS		= "buffs";
 	
 	@Override
@@ -108,8 +109,8 @@ public abstract class Char extends Actor {
 		super.storeInBundle( bundle );
 		
 		bundle.put( POS, pos );
-		bundle.put( TAG_HP, HP );
-		bundle.put( TAG_HT, HT );
+		bundle.put( TAG_HP, HEALTH_POINTS);
+		bundle.put(TAG_HB, HEALTH_BAR);
 		bundle.put( BUFFS, buffs );
 	}
 	
@@ -119,8 +120,8 @@ public abstract class Char extends Actor {
 		super.restoreFromBundle( bundle );
 		
 		pos = bundle.getInt( POS );
-		HP = bundle.getInt( TAG_HP );
-		HT = bundle.getInt( TAG_HT );
+		HEALTH_POINTS = bundle.getInt( TAG_HP );
+		HEALTH_BAR = bundle.getInt(TAG_HB);
 		
 		for (Bundlable b : bundle.getCollection( BUFFS )) {
 			if (b != null) {
@@ -156,8 +157,8 @@ public abstract class Char extends Actor {
 
 			if (enemy == Dungeon.hero) {
 				Dungeon.hero.interrupt();
-				if (effectiveDamage > enemy.HT / 4) {
-					Camera.main.shake( GameMath.gate( 1, effectiveDamage / (enemy.HT / 4), 5), 0.3f );
+				if (effectiveDamage > enemy.HEALTH_BAR / 4) {
+					Camera.main.shake( GameMath.gate( 1, effectiveDamage / (enemy.HEALTH_BAR / 4), 5), 0.3f );
 				}
 			}
 			
@@ -250,7 +251,7 @@ public abstract class Char extends Actor {
 	
 	public void damage( int dmg, Object src ) {
 		
-		if (HP <= 0) {
+		if (HEALTH_POINTS <= 0) {
 			return;
 		}
 		
@@ -264,7 +265,7 @@ public abstract class Char extends Actor {
 		}
 		
 		if (buff( Paralysis.class ) != null) {
-			if (Random.Int( dmg ) >= Random.Int( HP )) {
+			if (Random.Int( dmg ) >= Random.Int(HEALTH_POINTS)) {
 				Buff.detach( this, Paralysis.class );
 				if (Dungeon.visible[pos]) {
 					GLog.i( TXT_OUT_OF_PARALYSIS, name );
@@ -272,20 +273,20 @@ public abstract class Char extends Actor {
 			}
 		}
 		
-		HP -= dmg;
+		HEALTH_POINTS -= dmg;
 		if (dmg > 0 || src instanceof Char) {
-			sprite.showStatus( HP > HT / 2 ? 
+			sprite.showStatus( HEALTH_POINTS > HEALTH_BAR / 2 ?
 				CharSprite.WARNING : 
 				CharSprite.NEGATIVE,
 				Integer.toString( dmg ) );
 		}
-		if (HP <= 0) {
+		if (HEALTH_POINTS <= 0) {
 			die( src );
 		}
 	}
 	
 	public void destroy() {
-		HP = 0;
+		HEALTH_POINTS = 0;
 		Actor.remove( this );
 		Actor.freeCell( pos );
 	}
@@ -296,7 +297,7 @@ public abstract class Char extends Actor {
 	}
 	
 	public boolean isAlive() {
-		return HP > 0;
+		return HEALTH_POINTS > 0;
 	}
 	
 	@Override

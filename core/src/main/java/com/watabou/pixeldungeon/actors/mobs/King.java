@@ -55,7 +55,7 @@ public class King extends Mob {
 		name = Dungeon.depth == Statistics.deepestFloor ? "King of Dwarves" : "undead King of Dwarves";
 		spriteClass = KingSprite.class;
 		
-		HP = HT = 300;
+		HEALTH_POINTS = HEALTH_BAR = 300;
 		EXP = 40;
 		defenseSkill = 25;
 		
@@ -148,7 +148,7 @@ public class King extends Mob {
 	}
 	
 	private int maxArmySize() {
-		return 1 + MAX_ARMY_SIZE * (HT - HP) / HT;
+		return 1 + MAX_ARMY_SIZE * (HEALTH_BAR - HEALTH_POINTS) / HEALTH_BAR;
 	}
 	
 	private void summon() {
@@ -242,7 +242,7 @@ public class King extends Mob {
 			name = "undead dwarf";
 			spriteClass = UndeadSprite.class;
 			
-			HP = HT = 28;
+			HEALTH_POINTS = HEALTH_BAR = 28;
 			defenseSkill = 15;
 			
 			EXP = 0;

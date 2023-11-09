@@ -166,7 +166,7 @@ public enum HeroClass {
 	
 	private static void initHuntress( Hero hero ) {
 		
-		hero.HP = (hero.HT -= 5);
+		hero.HEALTH_POINTS = (hero.HEALTH_BAR -= 5);
 		
 		(hero.belongings.weapon = new Dagger()).identify();
 		Boomerang boomerang = new Boomerang();

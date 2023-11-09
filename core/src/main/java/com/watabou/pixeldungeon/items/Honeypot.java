@@ -100,7 +100,7 @@ public class Honeypot extends Item {
 		if (newPos != -1) {
 			Bee bee = new Bee();
 			bee.spawn( Dungeon.depth );
-			bee.HP = bee.HT;
+			bee.HEALTH_POINTS = bee.HEALTH_BAR;
 			bee.pos = newPos;
 			
 			GameScene.add( bee );

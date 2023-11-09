@@ -44,7 +44,7 @@ public class Earthroot extends Plant {
 		super.activate( ch );
 		
 		if (ch != null) {
-			Buff.affect( ch, Armor.class ).level = ch.HT;
+			Buff.affect( ch, Armor.class ).level = ch.HEALTH_BAR;
 		}
 		
 		if (Dungeon.visible[pos]) {

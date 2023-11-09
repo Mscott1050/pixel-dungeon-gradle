@@ -51,7 +51,7 @@ public class DM300 extends Mob {
 		name = Dungeon.depth == Statistics.deepestFloor ? "DM-300" : "DM-350";
 		spriteClass = DM300Sprite.class;
 		
-		HP = HT = 200;
+		HEALTH_POINTS = HEALTH_BAR = 200;
 		EXP = 30;
 		defenseSkill = 18;
 		
@@ -84,9 +84,9 @@ public class DM300 extends Mob {
 	public void move( int step ) {
 		super.move( step );
 		
-		if (Dungeon.level.map[step] == Terrain.INACTIVE_TRAP && HP < HT) {
+		if (Dungeon.level.map[step] == Terrain.INACTIVE_TRAP && HEALTH_POINTS < HEALTH_BAR) {
 			
-			HP += Random.Int( 1, HT - HP );
+			HEALTH_POINTS += Random.Int( 1, HEALTH_BAR - HEALTH_POINTS);
 			sprite.emitter().burst( ElmoParticle.FACTORY, 5 );
 			
 			if (Dungeon.visible[step] && Dungeon.hero.isAlive()) {

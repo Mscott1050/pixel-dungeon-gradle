@@ -65,8 +65,8 @@ public class Food extends Item {
 			
 			switch (hero.heroClass) {
 			case WARRIOR:
-				if (hero.HP < hero.HT) {
-					hero.HP = Math.min( hero.HP + 5, hero.HT );
+				if (hero.HEALTH_POINTS < hero.HEALTH_BAR) {
+					hero.HEALTH_POINTS = Math.min( hero.HEALTH_POINTS + 5, hero.HEALTH_BAR);
 					hero.sprite.emitter().burst( Speck.factory( Speck.HEALING ), 1 );
 				}
 				break;
